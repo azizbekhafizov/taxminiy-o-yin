@@ -12,22 +12,24 @@ console.log(randomNum);
 }
 
 
+let guess = null;
+
 function checkGuess() {
-    let guess = Number(document.getElementById("guessInput").value);
     let message = document.getElementById("message");
+    guess = Number(document.getElementById("guessInput").value);
 
     while (guess !== randomNum) {
         if (guess < randomNum) {
-            message.textContent = `Mening raqamim ${guess} dan katta  `;
+            message.textContent = `Mening raqamim ${guess} dan katta`;
         } else if (guess > randomNum) {
-            message.textContent = `  Mening raqamim ${guess} dan kam`;
-        } else {
-            message.textContent = "Tabriklayman! To'g'ri topdingiz 🎉";
-            return;
+            message.textContent = `Mening raqamim ${guess} dan kam`;
         }
-        return; 
+        return;
     }
+
+    message.textContent = "Tabriklayman! To'g'ri topdingiz 🎉";
 }
+
 
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
